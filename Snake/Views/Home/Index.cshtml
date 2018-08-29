@@ -1,0 +1,23 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    <div class="text-info">Pomyslnie zalogowano!</div>
+    <a class="btn btn-link" href="/Account/Logout">Logout</a>
+    <a class="btn btn-link" href="/Channel/Create">Utworz kanał</a>
+   
+    <a class="btn btn-link" href="/Channel/Index">Lista kanałów</a>    
+    
+}
+else
+{
+    <div><a href="/Account/Login" class="btn btn-success">Login</a></div>
+    <div><a href="/Account/Register" class="">Rejestracja</a></div>
+}
+
+@if (User.IsInRole("Admin"))
+{
+    <div>Panel Administratora</div>
+}
+else
+{
+    <div>Panel użytkownika</div>
+}
